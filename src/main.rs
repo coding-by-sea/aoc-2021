@@ -10,6 +10,6 @@ fn main() {
     // let filename = "examples/day_04";
     let filename = "inputs/day_04";
     let contents = fs::read_to_string(filename).expect("Something went wrong reading the file");
-    let res = part_1(&contents);
+    let res = part_2(&contents);
     println!("result is {:?}", res);
 }
