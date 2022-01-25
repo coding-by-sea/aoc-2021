@@ -1,7 +1,7 @@
 use std::cmp;
 
 #[derive(Debug)]
-struct Crab {
+pub struct Crab {
     pos: i64
 }
 
@@ -21,8 +21,7 @@ impl From<&str> for Crab {
     }
 }
 
-pub fn part_1(contents: &str) -> i64 {
-    let school:Vec<Crab> = contents.split(',').map(|x| Crab::from(x)).collect();
+pub fn part_1(school: &Vec<Crab>) -> i64 {
     let min_pos: i64 = school.iter().fold(0, |min, crab| cmp::min(min, crab.pos));
     let max_pos: i64 = school.iter().fold(0, |max, crab| cmp::max(max, crab.pos));
     let mut left = min_pos;
@@ -43,8 +42,7 @@ pub fn part_1(contents: &str) -> i64 {
     cmp::min(fuel_cost_left, fuel_cost_right)
 }
 
-pub fn part_2(contents: &str) -> i64 {
-    let school:Vec<Crab> = contents.split(',').map(|x| Crab::from(x)).collect();
+pub fn part_2(school: &Vec<Crab>) -> i64 {
     let min_pos: i64 = school.iter().fold(0, |min, crab| cmp::min(min, crab.pos));
     let max_pos: i64 = school.iter().fold(0, |max, crab| cmp::max(max, crab.pos));
     let mut left = min_pos;

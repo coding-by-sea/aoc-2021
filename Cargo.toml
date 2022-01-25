@@ -7,3 +7,10 @@ edition = "2021"
 
 [dependencies]
 counter = "0.5.2"
+
+[dev-dependencies]
+criterion = "*"
+
+[[bench]]
+name = "main"
+harness = false
